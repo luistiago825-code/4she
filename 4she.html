@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4SHE — Ciência também é coisa de mulher</title>
+
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+            4SHE
+        </div>
+
+        <nav class="top-nav">
+            <a href="#" onclick="showPage('home')">Início</a>
+            <a href="#board">Boards</a>
+            <a href="#" onclick="showPage('thread')">Destaques</a>
+            <a href="#" onclick="showPage('profile')">Perfil</a>
+        </nav>
+
+        <input
+            class="search"
+            type="text"
+            placeholder="Pesquisar..."
+        >
+
+        <div class="role-area">
+
+            <!-- TROCA VISUAL DE USUÁRIO -->
+            <select
+                class="role-select"
+                onchange="changeRole(this.value)"
+            >
+                <option value="user">Usuária</option>
+                <option value="moderator">Moderadora</option>
+                <option value="admin">Administradora</option>
+            </select>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section id="home" class="page active">
+
+            <div class="hero">
+
+                <div>
+
+                    <h1>
+                        Ciência também
+                        é coisa de mulher.
+                    </h1>
+
+                    <p>
+                        Um espaço para compartilhar, discutir e
+                        divulgar conhecimento científico. Aqui,
+                        mulheres pensam, questionam e constroem
+                        o futuro.
+                    </p>
+
+                    <button
+                        class="button"
+                    >
+                        Explorar boards →
+                    </button>
+
+                </div>
+
+                <div class="hero-visual">
+                    ♀
+                </div>
+
+            </div>
+
+
+            <div class="section">
+
+                <div class="section-title">
+                    <h2>Boards em destaque</h2>
+                </div>
+
+                <div class="boards-grid">
+
+                    <div class="board-card">
+                        <div class="board-icon">♧</div>
+                        <h3>Biologia</h3>
+                        <p>1.248 threads</p>
+                    </div>
+
+                    <div class="board-card">
+                        <div class="board-icon">⚛</div>
+                        <h3>Física</h3>
+                        <p>980 threads</p>
+                    </div>
+
+                    <div class="board-card">
+                        <div class="board-icon">▣</div>
+                        <h3>Computação</h3>
+                        <p>756 threads</p>
+                    </div>
+
+                    <div class="board-card">
+                        <div class="board-icon">✧</div>
+                        <h3>Astronomia</h3>
+                        <p>642 threads</p>
+                    </div>
+
+                    <div class="board-card"
+                        >
+                        <div class="board-icon">⌬</div>
+                        <h3>Mulheres na Ciência</h3>
+                        <p>512 threads</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="section">
+
+                <div class="section-title">
+                    <h2>Threads recentes</h2>
+                </div>
+
+                <div class="thread-list">
+
+                    <div class="thread"
+                         onclick="showPage('thread')">
+
+                        <div class="thread-image">🧬</div>
+
+                        <div>
+                            <h3>
+                                Novas descobertas sobre o
+                                sistema imunológico
+                            </h3>
+
+                            <div class="thread-meta">
+                                Biologia · @luna_astro · há 2h
+                            </div>
+                        </div>
+
+                        <div class="thread-count">
+                            24 respostas
+                        </div>
+
+                    </div>
+
+
+                    <div class="thread">
+
+                        <div class="thread-image">🔭</div>
+
+                        <div>
+                            <h3>
+                                Mulheres na física:
+                                conquistas e desafios
+                            </h3>
+
+                            <div class="thread-meta">
+                                Física · @flor_cientista · há 4h
+                            </div>
+                        </div>
+
+                        <div class="thread-count">
+                            42 respostas
+                        </div>
+
+                    </div>
+
+
+                    <div class="thread">
+
+                        <div class="thread-image">💻</div>
+
+                        <div>
+                            <h3>
+                                Recomendações de livros
+                                para iniciantes em programação
+                            </h3>
+
+                            <div class="thread-meta">
+                                Computação · @mariana · há 5h
+                            </div>
+                        </div>
+
+                        <div class="thread-count">
+                            18 respostas
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BOARDS
+        ================================================== -->
+
+        <section id="boards" class="page">
+
+            <div class="section-title">
+                <h2>Boards</h2>
+                <span>5 categorias</span>
+            </div>
+
+            <div class="boards-layout">
+
+                <aside class="board-sidebar">
+
+                    <button class="selected">⌘ Todas</button>
+                    <button>♧ Biologia</button>
+                    <button>⚛ Física</button>
+                    <button>▣ Computação</button>
+                    <button>✧ Astronomia</button>
+                    <button>⚗ Química</button>
+                    <button>∑ Matemática</button>
+                    <button>⚙ Engenharia</button>
+                    <button>♡ Mulheres na Ciência</button>
+
+                </aside>
+
+
+                <div class="board-content">
+
+                    <h2>Biologia</h2>
+
+                    <p style="margin: 8px 0 25px; color:#666;">
+                        Discussões sobre vida, saúde e meio ambiente.
+                    </p>
+
+                    <div class="thread-list">
+
+                        <!-- THREAD 1 -->
+
+                        <div class="thread"
+                             onclick="showPage('thread')">
+
+                            <div class="thread-image">
+                                🧬
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Novas descobertas sobre
+                                    o sistema imunológico
+                                </h3>
+
+                                <div class="thread-meta">
+                                    @luna_astro · há 2h
+                                </div>
+
+                            </div>
+
+                            <div class="thread-count">
+                                24 respostas
+                            </div>
+
+                        </div>
+
+
+                        <!-- THREAD 2 -->
+
+                        <div class="thread">
+
+                            <div class="thread-image">
+                                🌱
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    O impacto das mudanças
+                                    climáticas na biodiversidade
+                                </h3>
+
+                                <div class="thread-meta">
+                                    @flora · há 3h
+                                </div>
+
+                            </div>
+
+                            <div class="thread-count">
+                                12 respostas
+                            </div>
+
+                        </div>
+
+                <a href="publicadouro.html">publicar thread</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             THREAD
+        ================================================== -->
+
+        <section id="thread" class="page">
+
+            <div class="thread-page">
+
+                <button
+                    class="back"
+                   
+                >
+                    ← Voltar
+                </button>
+
+
+                <div class="post">
+
+                    <div class="post-header">
+
+                        <strong>
+                            Novas descobertas sobre a função
+                            do sistema imunológico
+                        </strong>
+
+                        <span>
+                            #biologia
+                        </span>
+
+                    </div>
+
+
+                    <div class="post-body">
+
+                        <strong>@luna_astro (OP)</strong>
+
+                        <p style="margin-top:15px;">
+
+                            Li um artigo muito interessante hoje
+                            sobre como o sistema imunológico pode
+                            influenciar o desenvolvimento de certos
+                            tipos de câncer.
+
+                        </p>
+
+                        <div class="post-image">
+                            🧬
+                        </div>
+
+                    </div>
+
+
+                    <div class="post-actions">
+
+                        <span>♡ 28</span>
+                        <span>💬 4</span>
+                        <span>↗ Compartilhar</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMENTÁRIO 1 -->
+
+                <div class="post">
+
+                    <div class="post-header">
+
+                        <strong>@flora</strong>
+
+                        <span>há 1h</span>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        Sim! Tem um estudo recente que mostra
+                        como determinadas células podem ser
+                        reprogramadas para combater tumores.
+
+                    </div>
+
+                    <div class="post-actions">
+                        ♡ 12 · Responder
+                    </div>
+
+                </div>
+
+
+                <!-- COMENTÁRIO 2 -->
+
+                <div class="post">
+
+                    <div class="post-header">
+
+                        <strong>@biocuriosa</strong>
+
+                        <span>há 50min</span>
+
+                    </div>
+
+                    <div class="post-body">
+
+                        Também achei isso incrível.
+                        É especialmente interessante pensar
+                        nas aplicações futuras.
+
+                    </div>
+
+                    <div class="post-actions">
+                        ♡ 8 · Responder
+                    </div>
+
+                </div>
+
+
+                <div class="comment-form">
+
+                    <input
+                        type="text"
+                        placeholder="Escreva um comentário..."
+                    >
+
+                    <button>
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PERFIL
+        ================================================== -->
+
+        <section id="profile" class="page">
+
+            <div class="profile">
+
+                <div class="profile-header">
+
+                    <div class="avatar">
+                        ♀
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h2>@luna_astro</h2>
+
+                        <p>
+                            Membro desde mar. 2025
+                        </p>
+
+                        <button class="button">
+                            Editar perfil
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-tabs">
+
+                    <span>Publicações</span>
+                    <span>Salvos</span>
+                    <span>Curtiu</span>
+
+                </div>
+
+
+                <div class="thread-list">
+
+                    <div class="thread">
+
+                        <div class="thread-image">
+                            🧬
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Novas descobertas sobre
+                                o sistema imunológico
+                            </h3>
+
+                            <div class="thread-meta">
+                                Biologia · 24 respostas
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="thread">
+
+                        <div class="thread-image">
+                            🌱
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Mudanças climáticas
+                                e biodiversidade
+                            </h3>
+
+                            <div class="thread-meta">
+                                Biologia · 12 respostas
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MODERADORA
+        ================================================== -->
+
+        <section id="moderator" class="page">
+
+            <div class="dashboard">
+
+                <aside class="dashboard-sidebar">
+
+                    <div class="dash-title">
+                        MODERAÇÃO
+                    </div>
+
+                    <button>⌂ Início</button>
+                    <button>⚠ Denúncias</button>
+                    <button>▤ Threads</button>
+                    <button>♙ Usuários</button>
+                    <button>⚙ Configurações</button>
+
+                </aside>
+
+
+                <div class="dashboard-content">
+
+                    <h1>
+                        Central de Moderação
+                    </h1>
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <span>Denúncias pendentes</span>
+                            <strong>5</strong>
+                        </div>
+
+                        <div class="stat">
+                            <span>Threads analisadas</span>
+                            <strong>82</strong>
+                        </div>
+
+                        <div class="stat">
+                            <span>Usuários suspensos</span>
+                            <strong>7</strong>
+                        </div>
+
+                        <div class="stat">
+                            <span>Conteúdos removidos</span>
+                            <strong>13</strong>
+                        </div>
+
+                    </div>
+
+
+                    <h3 style="margin-bottom:15px;">
+                        Denúncias recentes
+                    </h3>
+
+
+                    <div class="admin-list">
+
+                        <div class="admin-row">
+
+                            <span>
+                                @usuario123 · Comentário ofensivo
+                            </span>
+
+                            <span class="tag tag-danger">
+                                VER
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-row">
+
+                            <span>
+                                @flor_cientista · Spam
+                            </span>
+
+                            <span class="tag tag-danger">
+                                VER
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-row">
+
+                            <span>
+                                @anonimo · Discurso de ódio
+                            </span>
+
+                            <span class="tag tag-danger">
+                                VER
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-row">
+
+                            <span>
+                                @user456 · Conteúdo impróprio
+                            </span>
+
+                            <span class="tag tag-danger">
+                                VER
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ADMINISTRADORA
+        ================================================== -->
+
+        <section id="admin" class="page">
+
+            <div class="dashboard">
+
+                <aside class="dashboard-sidebar">
+
+                    <div class="dash-title">
+                        ADMINISTRAÇÃO
+                    </div>
+
+                    <button>⌂ Painel</button>
+                    <button>♙ Usuários</button>
+                    <button>▤ Threads</button>
+                    <button>▦ Boards</button>
+                    <button>⚠ Denúncias</button>
+                    <button>♟ Moderadoras</button>
+                    <button>⚙ Configurações</button>
+
+                </aside>
+
+
+                <div class="dashboard-content">
+
+                    <h1>
+                        Painel Administrativo
+                    </h1>
+
+
+                    <div class="stats">
+
+                        <div class="stat">
+
+                            <span>
+                                Usuárias
+                            </span>
+
+                            <strong>
+                                1.248
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span>
+                                Threads
+                            </span>
+
+                            <strong>
+                                892
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span>
+                                Denúncias
+                            </span>
+
+                            <strong>
+                                5
+                            </strong>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <span>
+                                Moderadoras
+                            </span>
+
+                            <strong>
+                                7
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3 style="margin-bottom:15px;">
+                        Gestão da plataforma
+                    </h3>
+
+
+                    <div class="admin-list">
+
+                        <div class="admin-row">
+                            <span>Gerenciar usuários</span>
+                            <strong>→</strong>
+                        </div>
+
+                        <div class="admin-row">
+                            <span>Gerenciar boards</span>
+                            <strong>→</strong>
+                        </div>
+
+                        <div class="admin-row">
+                            <span>Visualizar denúncias</span>
+                            <strong>→</strong>
+                        </div>
+
+                        <div class="admin-row">
+                            <span>Permissões de moderadoras</span>
+                            <strong>→</strong>
+                        </div>
+
+                        <div class="admin-row">
+                            <span>Estatísticas</span>
+                            <strong>→</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO MOBILE
+    ====================================================== -->
+
+    <nav class="mobile-nav">
+
+        <button onclick="showPage('home')">
+            ⌂
+            <small>Início</small>
+        </button>
+
+        <button>
+            ▦
+            <small>Boards</small>
+        </button>
+
+        <button onclick="showPage('thread')">
+            ＋
+            <small>Novo</small>
+        </button>
+
+        <button onclick="showPage('profile')">
+            ♙
+            <small>Perfil</small>
+        </button>
+
+    </nav>
+
+
+    <footer>
+        4SHE — Ciência também é coisa de mulher.
+    </footer>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT APENAS PARA A NAVEGAÇÃO DA MAQUETE
+====================================================== -->
+                <script src="js.js/javascript.js"></script>
+
+</body>
+</html>

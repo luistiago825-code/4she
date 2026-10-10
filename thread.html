@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<link rel="stylesheet" href="css.css">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4SHE — Thread</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        header {
+            height: 70px;
+            background: white;
+            border-bottom: 2px solid #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-bottom: 20px;
+
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .voltar:hover {
+            text-decoration: underline;
+        }
+
+        .thread {
+            background: white;
+            border: 2px solid #111;
+            padding: 30px;
+        }
+
+        .thread h1 {
+            font-size: 32px;
+            margin-bottom: 25px;
+
+            border-bottom: 2px solid #111;
+            padding-bottom: 15px;
+        }
+
+        .thread img {
+            display: block;
+
+            max-width: 100%;
+            max-height: 500px;
+
+            object-fit: contain;
+
+            margin-bottom: 25px;
+        }
+
+        .texto {
+            font-size: 16px;
+            line-height: 1.7;
+
+            white-space: pre-wrap;
+        }
+
+        .sem-imagem {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 15px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            main {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .thread {
+                padding: 20px;
+            }
+
+            .thread h1 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            4SHE
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <a href="javascript:history.back()" class="voltar">
+            ← VOLTAR
+        </a>
+
+
+        <article id="thread_full">
+
+            <h1 id="titulo">
+                Carregando...
+            </h1>
+
+
+            <img
+                id="imagem"
+                class="sem-imagem"
+                alt="Imagem da thread"
+            >
+
+
+            <div
+                id="texto"
+                class="texto"
+            >
+                Carregando...
+            </div>
+
+        </article>
+
+    </main>
+<script src='js.js/thread.js'>
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4SHE — Nova Thread</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        /* HEADER */
+
+        header {
+            height: 70px;
+            border-bottom: 2px solid #111;
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTEÚDO */
+
+        main {
+            width: 90%;
+            max-width: 850px;
+            margin: 50px auto;
+        }
+
+        .page-title {
+            border-bottom: 2px solid #111;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* FORMULÁRIO */
+
+        .form-container {
+            background: #fff;
+            border: 2px solid #111;
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 2px solid #111;
+            background: #f9f9f9;
+            padding: 12px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            background: #fff;
+        }
+
+        textarea {
+            min-height: 220px;
+            resize: vertical;
+        }
+
+        .help {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* BOTÕES */
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            border: 2px solid #111;
+            padding: 12px 22px;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            cursor: pointer;
+            background: #111;
+            color: #fff;
+        }
+
+        button:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        .cancelar {
+            background: #fff;
+            color: #111;
+        }
+
+        /* STATUS */
+
+        #status {
+            margin-top: 20px;
+            padding: 12px;
+            border: 2px solid #111;
+            display: none;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 0 15px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            main {
+                width: 94%;
+                margin: 30px auto;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .page-title h1 {
+                font-size: 26px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            4SHE
+        </div>
+
+        <nav>
+            <a href="index.html">INÍCIO</a>
+            <a href="boards.html">BOARDS</a>
+            <a href="perfil.html">PERFIL</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <div class="page-title">
+
+            <h1>Nova Thread</h1>
+
+            <p>
+                Inicie uma nova discussão na comunidade.
+            </p>
+
+        </div>
+
+
+        <div class="form-container">
+
+            <form id="threadForm">
+
+                <!-- TÍTULO -->
+
+                <div class="form-group">
+
+                    <label for="titulo">
+                        Título da thread
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Digite o título da discussão"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- URL DA IMAGEM -->
+
+                <div class="form-group">
+
+                    <label for="url">
+                        URL da imagem
+                    </label>
+
+                    <input
+                        type="url"
+                        id="url"
+                        placeholder="https://exemplo.com/imagem.jpg"
+                    >
+
+                    <div class="help">
+                        Opcional. Cole o endereço de uma imagem para acompanhar a thread.
+                    </div>
+
+                </div>
+
+
+                <!-- TEXTO -->
+
+                <div class="form-group">
+
+                    <label for="texto">
+                        Texto da discussão
+                    </label>
+
+                    <textarea
+                        id="texto"
+                        placeholder="Escreva aqui o conteúdo da sua discussão..."
+                        required
+                    ></textarea>
+
+                    <div class="help">
+                        Explique sua ideia, pergunta, hipótese ou assunto que deseja discutir.
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+
+                <div class="buttons">
+
+                    <button type="submit">
+                        PUBLICAR THREAD
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancelar"
+                        onclick="history.back()"
+                    >
+                        CANCELAR
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div id="status"></div>
+
+        </div>
+
+    </main>
+
+<script>
+    // garante username antes de publicar
+    if (!localStorage.getItem('username')) {
+        alert('Escolha um nome de usuário antes de publicar.');
+        window.location.href = 'boards.html';
+    }
+
+    const formulario = document.getElementById('threadForm');
+    const params = new URLSearchParams(window.location.search);
+    const BOARD = params.get('board') || 'Biologia';
+
+    // mostra o board no título
+    document.querySelector('.page-title p').innerText =
+        'Publicando em: ' + BOARD;
+
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const titulo = document.getElementById('titulo').value.trim();
+        const url = document.getElementById('url').value.trim();
+        const texto = document.getElementById('texto').value.trim();
+
+        if (!titulo || !texto) return;
+
+        let threads = JSON.parse(localStorage.getItem('threads')) || [];
+
+        const novaThread = {
+            id: threads.length + 1,
+            titulo: titulo,
+            url: url,
+            texto: texto,
+            board: BOARD,
+            autor: localStorage.getItem('username'),
+            data: new Date().toISOString(),
+            comentarios: []
+        };
+
+        threads.push(novaThread);
+        localStorage.setItem('threads', JSON.stringify(threads));
+
+        const status = document.getElementById('status');
+        status.style.display = 'block';
+        status.innerText = 'THREAD PUBLICADA COM SUCESSO EM ' + BOARD.toUpperCase() + '.';
+
+        formulario.reset();
+
+        setTimeout(() => {
+            window.location.href = 'boards.html?board=' + encodeURIComponent(BOARD);
+        }, 1200);
+    });
+</script>
+
+
+</body>
+
+</html>

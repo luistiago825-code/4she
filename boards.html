@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <!-- =================================================
+             BOARDS
+        ================================================== -->
+    <section>
+        <div class="section-title">
+            <h2>Boards</h2>
+ 
+
+                    <a id="link_publicar" class='publicar-thread' href="publicadouro.html">
+    <span class="plus">＋</span>
+
+
+                    
+                    </a>
+
+        <script>
+            const boardAtual = new URLSearchParams(location.search).get('board') || 'niger';
+            document.getElementById('link_publicar').href =
+                'publicadouro.html?board=' + encodeURIComponent(boardAtual);
+
+            // mostra o nome do board atual no título
+            const h2 = document.querySelector('.board-content h2');
+            if (h2) h2.innerText = boardAtual;
+            const b = new URLSearchParams(location.search).get('board') || 'niger';
+            document.getElementById('link_publicar').href =
+                'publicadouro.html?board=' + encodeURIComponent(b);
+        </script>
+    </section>
+        </div>
+
+        <div class="boards-layout">
+
+            <aside class="board-sidebar">
+
+                <button>⌘ Todas</button>
+                <button>♧ Biologia</button>
+                <button>⚛ Física</button>
+                <button>▣ Computação</button>
+                <button>✧ Astronomia</button>
+                <button>⚗ Química</button>
+                <button>∑ Matemática</button>
+                <button>⚙ Engenharia</button>
+                <button>♡ Mulheres na Ciência</button>
+
+            </aside>
+
+
+            <div class="board-content">
+                <a href="javascript:history.back()" class="voltar">
+                    ← VOLTAR
+                </a>
+
+                <h2>Biologia</h2>
+
+                <p style="margin: 8px 0 25px; color:#666;">
+                    Discussões sobre vida, saúde e meio ambiente.
+                </p>
+
+                <div id="thread-list"></div>
+
+
+            </div>
+
+
+        </div>
+    <script src="js.js/javascript.js"></script>
+
+</body>
+
+</html>
