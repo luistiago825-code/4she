@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>4SHE — Ciência também é coisa de mulher</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+    <div class="logo" data-nav="home">4SHE</div>
+
+    <nav class="top-nav">
+        <a data-nav="home">INÍCIO</a>
+        <a data-nav="boards">BOARDS</a>
+    </nav>
+
+    <input class="search" type="text" placeholder="Buscar boards...">
+
+</header>
+
+<main>
+
+    <!-- HOME -->
+    <section id="page-home" class="page active">
+        <div class="hero">
+            <div>
+                <h1>Ciência também<br>é coisa de mulher.</h1>
+                <p>Um espaço para compartilhar, discutir e divulgar conhecimento científico. Aqui, mulheres pensam, questionam e constroem o futuro.</p>
+                <button class="button" data-nav="boards">Explorar boards →</button>
+            </div>
+            <div class="hero-visual">♀</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><h2>Boards em destaque</h2></div>
+            <div class="boards-grid">
+                <div class="board-card" data-board="Biologia"><div class="board-icon">♧</div><h3>Bate Papo</h3></div>
+                <div class="board-card" data-board="Física"><div class="board-icon">⚛</div><h3>Opiniões</h3></div>
+                <div class="board-card" data-board="Computação"><div class="board-icon">▣</div><h3>Memes</h3></div>
+                <div class="board-card" data-board="Astronomia"><div class="board-icon">✧</div><h3>Curiosidades</h3></div>
+                <div class="board-card" data-board="Mulheres na Ciência"><div class="board-icon">⌬</div><h3>Mulheres na Ciência</h3></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title"><h2>Threads recentes</h2></div>
+            <div id="home_threads"></div>
+        </div>
+    </section>
+
+    <!-- BOARDS -->
+    <section id="page-boards" class="page">
+        <div class="boards-layout">
+            <aside class="board-sidebar">
+                <button data-board="__todas__" class="selected">⌘ Todas</button>
+                <button data-board="Biologia">♧ Bate Papo</button>
+                <button data-board="Física">⚛ Opiniões</button>
+                <button data-board="Computação">▣ Memes</button>
+                <button data-board="Astronomia">✧ Curiosidades</button>
+                <button data-board="Química">⚗ Ciencias</button>
+                <button data-board="Matemática">∑ Nerdices</button>
+                <button data-board="Engenharia">⚙ Bate papo2</button>
+                <button data-board="Mulheres na Ciência">♡ Mulheres na Ciência</button>
+            </aside>
+
+            <div class="board-content">
+                <div class="board-header">
+                    <div>
+                        <h2 id="board_titulo">Todas as threads</h2>
+                        <p id="board_desc">Todas as discussões da plataforma.</p>
+                    </div>
+                    <a id="link_publicar" class="publicar-thread" href="#">
+                        <span class="plus">＋</span>
+                        <span class="txt">PUBLICAR THREAD</span>
+                    </a>
+                </div>
+                <div id="thread-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICAR -->
+    <section id="page-publicar" class="page">
+        <div class="form-container">
+            <h2 style="margin-bottom:20px;border-bottom:2px solid #111;padding-bottom:15px;">Nova Thread</h2>
+            <form id="threadForm">
+                <div class="form-group">
+                    <label for="titulo">Título da thread</label>
+                    <input type="text" id="titulo" placeholder="Digite o título da discussão" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">URL da imagem</label>
+                    <input type="url" id="url" placeholder="https://exemplo.com/imagem.jpg">
+                    <div class="help">Opcional. Cole o endereço de uma imagem.</div>
+                </div>
+                <div class="form-group">
+                    <label for="texto">Texto da discussão</label>
+                    <textarea id="texto" required placeholder="Escreva aqui o conteúdo da sua discussão..."></textarea>
+                    <div class="help">Explique sua ideia, pergunta ou hipótese.</div>
+                </div>
+                <div class="buttons">
+                    <button type="submit">PUBLICAR THREAD</button>
+                    <button type="button" class="cancelar" data-nav="boards">CANCELAR</button>
+                </div>
+            </form>
+            <div id="status"></div>
+        </div>
+    </section>
+
+    <!-- THREAD -->
+    <section id="page-thread" class="page">
+        <div class="thread-page">
+            <button class="back" data-nav="boards">← Voltar</button>
+
+            <article class="post">
+                <div class="post-header">
+                    <strong id="thread_titulo">Carregando...</strong>
+                    <span id="thread_board_tag">#board</span>
+                </div>
+                <div class="post-body">
+                    <strong id="thread_autor">@carregando</strong>
+                    <img id="thread_imagem" class="sem-imagem" alt="">
+                    <div class="texto" id="thread_texto">Carregando...</div>
+                </div>
+            </article>
+
+            <div class="comentarios-lista" id="comentarios_lista"></div>
+
+            <div class="comment-form">
+                <input type="text" id="input_comentario" placeholder="Escreva um comentário...">
+                <button id="btn_comentar">→</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<nav class="mobile-nav">
+    <button data-nav="home">⌂<small>Início</small></button>
+    <button data-nav="boards">▦<small>Boards</small></button>
+    <button data-nav="publicar">＋<small>Novo</small></button>
+</nav>
+
+<footer>4SHE — Ciência também é coisa de mulher.</footer>
+
+<script src="api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
