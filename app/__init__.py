@@ -28,6 +28,7 @@ def create_app():
     bcrypt.init_app(app)
 
     # -------------------------------------------------
+<<<<<<< HEAD
     # Importa models e cria o banco automaticamente
     # -------------------------------------------------
     from . import models  # noqa: F401
@@ -36,6 +37,11 @@ def create_app():
     with app.app_context():
         db.create_all()
         seed_boards()
+=======
+    # Importa models (registra as tabelas)
+    # -------------------------------------------------
+    from . import models   # noqa: F401
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
 
     # -------------------------------------------------
     # Registra blueprints
@@ -45,7 +51,11 @@ def create_app():
     from .routes.threads  import threads_bp
     from .routes.comments import comments_bp
 
+<<<<<<< HEAD
     app.register_blueprint(auth_bp,    url_prefix="/api/auth")
+=======
+    app.register_blueprint(auth_bp,     url_prefix="/api/auth")
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
     app.register_blueprint(boards_bp,   url_prefix="/api/boards")
     app.register_blueprint(threads_bp,  url_prefix="/api/threads")
     app.register_blueprint(comments_bp, url_prefix="/api/threads")
@@ -65,7 +75,11 @@ def create_app():
     def add_cors(resp):
         resp.headers["Access-Control-Allow-Origin"] = "*"
         resp.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+<<<<<<< HEAD
         resp.headers["Access-Control-Allow-Methods"] = "GET, POST, DELETE, PUT, OPTIONS"
+=======
+        resp.headers["Access-Control-Allow-Methods"] = "GET, POST, DELETE, OPTIONS"
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
         return resp
 
     @app.route("/api/<path:_>", methods=["OPTIONS"])
@@ -82,6 +96,10 @@ def create_app():
     @app.route("/")
     @app.route("/<path:path>")
     def serve_front(path="index.html"):
+<<<<<<< HEAD
+=======
+        # Se não começa com /api e nem é arquivo, devolve index.html (SPA)
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
         target = PUBLIC_DIR / path
         if target.is_file():
             return send_from_directory(PUBLIC_DIR, path)

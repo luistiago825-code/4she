@@ -38,9 +38,12 @@ class User(db.Model):
     comments = db.relationship(
         "Comment", back_populates="autor", cascade="all, delete-orphan"
     )
+<<<<<<< HEAD
     votes = db.relationship(
         "Vote", back_populates="autor", cascade="all, delete-orphan"
     )
+=======
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
 
     def to_dict(self):
         return {
@@ -121,21 +124,27 @@ class Thread(db.Model):
         cascade="all, delete-orphan",
         order_by="Comment.created_at",
     )
+<<<<<<< HEAD
     votes = db.relationship(
         "Vote",
         back_populates="thread",
         cascade="all, delete-orphan",
     )
+=======
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
 
     __table_args__ = (
         Index("ix_threads_board_created", "board_id", "created_at"),
     )
 
+<<<<<<< HEAD
     @property
     def votos(self):
         """Calcula o total de votos dinamicamente (soma dos tipos)."""
         return sum(v.tipo for v in self.votes)
 
+=======
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
     def to_dict(self, incluir_comentarios=False):
         d = {
             "id": self.id,
@@ -145,8 +154,11 @@ class Thread(db.Model):
             "board": self.board.slug,
             "board_nome": self.board.nome,
             "autor": self.autor.username,
+<<<<<<< HEAD
             "user_id": self.user_id,
             "votos": self.votos,
+=======
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
             "created_at": self.created_at.isoformat(),
             "total_comentarios": len(self.comments),
         }
@@ -197,6 +209,7 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f"<Comment {self.id} thread={self.thread_id}>"
+<<<<<<< HEAD
 
 
 # =====================================================
@@ -228,3 +241,5 @@ class Vote(db.Model):
 
     def __repr__(self):
         return f"<Vote user={self.user_id} thread={self.thread_id} tipo={self.tipo}>"
+=======
+>>>>>>> c558122bc6b81ae580e8cabbac90b26ce81c2769
